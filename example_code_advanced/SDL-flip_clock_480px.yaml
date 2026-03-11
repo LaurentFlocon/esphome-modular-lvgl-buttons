@@ -6,7 +6,6 @@
     # components: [font, image, lvgl]
     # refresh: 1h
 
-
 substitutions:
   icon_font: mdi_icons_40
   text_font: nunito_20
@@ -97,11 +96,12 @@ packages:
 
   # Add a button that displays the time
   button_2: !include
-    file: esphome-modular-lvgl-buttons/widgets/flip_clock/flip_clock.yaml
+    file: esphome-modular-lvgl-buttons/widgets/flip_clock.yaml
     vars:
       uid: button_2
       row: 0
       column: 2
+      font_size: 75
       click_page: info_screen
       
   # Add a button that displays the time
@@ -112,7 +112,6 @@ packages:
       row: 1
       column: 2
       click_page: info_screen      
-
 
   # Add a dimmer light
   button_4: !include
@@ -131,9 +130,6 @@ packages:
     vars:
       light_entity: "light.athom_rgb_light_d93662_rgb_light_strip"
       widget_name: "button_4"
-
-
-
 
 # This is the main LVGL section. We start with a simple grid.
 lvgl:
