@@ -1,4 +1,5 @@
-# The Waveshare ESP32-P4-WIFI6-Touch-LCD-10.1 is a self contained, 10.1 inch 800x1280 touchscreen display with an ESP32-P4 MCU.
+# The Waveshare ESP32-P4-WIFI6-Touch-LCD-7 is a self contained, 7 inch 720x1280 touchscreen display with an ESP32-P4 MCU.
+# The 7" panel uses an ILI9881C driver chip (not JD9365 like the 10.1").
 #
 # Schematic: https://github.com/waveshareteam/ESP32-P4-WIFI6-Touch-LCD-X
 # Wiki: https://docs.waveshare.com/ESP32-P4-WIFI6-Touch-LCD-X
@@ -118,7 +119,7 @@ light:
 display:
   - platform: mipi_dsi
     id: main_display
-    model: WAVESHARE-P4-NANO-10.1
+    model: WAVESHARE-7-DSI-TOUCH-A
     reset_pin:
       number: GPIO27
     rotation: 0
