@@ -11,6 +11,9 @@
 #    icon:
 #    entity_id:
 #    option_value:
+#    button_color_option_selected:
+#    icon_color_option_selected:
+#    label_color_option_selected:
 
 # This section add a button to LVGL page main_page
 lvgl:
