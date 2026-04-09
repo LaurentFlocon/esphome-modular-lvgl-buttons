@@ -1,5 +1,5 @@
 ---
-# Select the option for input select.
+# Button to select a given option for an input select.
 # vars:
 #    uid:
 #    page_id:
@@ -10,7 +10,7 @@
 #    text:
 #    icon:
 #    entity_id:
-#    select_option:
+#    option_value:
 
 # This section add a button to LVGL page main_page
 lvgl:
@@ -25,8 +25,6 @@ lvgl:
             grid_cell_column_span: ${column_span | default(1)}
             grid_cell_x_align: stretch
             grid_cell_y_align: stretch
-            # outline_width: 1
-            # outline_color: red
             widgets:
               - button:
                   id: button_${uid}
@@ -47,7 +45,7 @@ lvgl:
                         action: select.select_option
                         data:
                           entity_id: ${entity_id}
-                          option: ${select_option}
+                          option: ${option_value}
 
 # This section will update input select state from Home Assistant
 text_sensor:
@@ -59,17 +57,17 @@ text_sensor:
           condition:
             - text_sensor.state:
                 id: widget_sensor_${uid}
-                state: ${select_option}       
+                state: ${option_value}       
           then:
             - lvgl.widget.update:
                 id: button_${uid}
-                bg_color: ${button_selected_color | default(button_on_color)}
+                bg_color: ${button_color_option_selected | default(button_on_color)}
             - lvgl.widget.update:
                 id: icon_${uid}
-                text_color: ${icon_selected_color | default(icon_on_color)}
+                text_color: ${icon_color_option_selected | default(icon_on_color)}
             - lvgl.widget.update:
                 id: label_${uid}
-                text_color: ${label_selected_color | default(label_on_color)}  
+                text_color: ${label_color_option_selected | default(label_on_color)}  
           else:
             - lvgl.widget.update:
                 id: button_${uid}
